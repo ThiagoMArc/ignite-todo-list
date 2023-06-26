@@ -1,7 +1,7 @@
-import styles from './NewTask.module.css'
+import styles from './CreateTask.module.css'
 import {PlusCircle} from 'phosphor-react'
 
-export function NewTask(){
+export function CreateTask(){
     return(
         <>
             <div className={styles.wrapper}>
