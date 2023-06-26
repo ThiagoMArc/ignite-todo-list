@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     padding: 1.25rem 0;
-    height: 8.5rem;
+    width: fixed 90rem;
+    height: fixed 12.5rem;
 }
 
 .header img {
