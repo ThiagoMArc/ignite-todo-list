@@ -1,0 +1,35 @@
+.taskInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+    margin-top: 5rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
+}
+
+.createdTask {
+    color: var(--blue);
+    font-size: 0.875rem;
+    font-family: 'Inter' sans-serif;
+    font-weight: 700;
+}
+
+.counter {
+    width: 1.5625rem auto;
+    color: var(--gray-200);
+    border-radius: 999px;
+    background: var(--gray-400);
+    gap: 0.625rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.125rem 0.5rem;
+}
+
+.completedTask {
+    color: var(--purple);
+    font-size: 0.875rem;
+    font-family: 'Inter' sans-serif;
+    font-weight: 700;
+}
