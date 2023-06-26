@@ -3,8 +3,11 @@
     display: flex;
     justify-content: center;
     padding: 1.25rem 0;
+    height: 8.5rem;
 }
 
 .header img {
-    height: 3rem; 
+    width: 7.875rem;
+    height: 5rem;
+    flex-shrink: 0;
 }
