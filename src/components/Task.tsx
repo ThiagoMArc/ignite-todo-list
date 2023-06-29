@@ -23,6 +23,17 @@ export function Task(){
         setTodos(todos.filter(td => td.id !== id))
     }
 
+    function completeTodo(id: number) {
+        const todosCopy = [...todos]
+        const todoToBeUpdated = todosCopy.find(t => t.id === id)
+        
+        if(todoToBeUpdated !== undefined){ 
+            todoToBeUpdated.completed = !todoToBeUpdated.completed
+        }
+
+        setTodos(todosCopy)
+    }
+
     return(
         <>
             <form onSubmit={handleCreateTodo} className={styles.wrapper}>
@@ -31,7 +42,8 @@ export function Task(){
             </form>
             <TaskList 
                 todos={todos}
-                onDeleteTodos={deleteTodo}
+                onDeleteTodo={deleteTodo}
+                onCompleteTodo={completeTodo}
             />
         </>
     ) 
