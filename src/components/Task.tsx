@@ -1,44 +1,38 @@
-import { Trash } from 'phosphor-react'
-import clipBoard from '../assets/clipboard.svg'
 import styles from './Task.module.css'
-import { Todos } from '../models/Todos'
+import {PlusCircle} from 'phosphor-react'
+import { TaskList } from './TaskList'
+import { useState } from 'react'
+import { Todo } from '../models/Todo'
 
-export function Task({todos}: Todos){
+export function Task(){
 
-    const thereIsTodos = todos.length > 0;
+    const [newTodoText, setTodoText] = useState('')
+    const [todos, setTodos] = useState<Todo[]>([])
+
+    function handleCreateTodo(event: any){
+        event.preventDefault()
+        setTodos([...todos, {id: todos.length +1, name: newTodoText, completed:false}])
+        setTodoText('')
+    }
+
+    function handleNewTodoChange(event: any) {
+        setTodoText(event.target.value)
+    }
+
+    function deleteTodo(id: number) {
+        setTodos(todos.filter(td => td.id !== id))
+    }
 
     return(
         <>
-            <div className={styles.taskInfo}>
-                <p className={styles.createdTask}>Tarefas Criadas <span className={styles.counter}>0</span></p>
-                <p className={styles.completedTask}>Concluídas <span className={styles.counter}>0</span></p>
-            </div>
-
-            {thereIsTodos ? (
-                <div className={styles.tasks}>
-                <ul>
-                    {
-                        todos.map(td => {
-                            return (
-                                <li key={td.id}>
-                                    <input type="checkbox" title="Completar tarefa" />
-                                    {td.name}
-                                    <button className={styles.trash} title="Deletar tarefa">
-                                        <Trash size={20} />
-                                    </button>
-                                </li>
-                            )        
-                        })
-                    }
-                </ul>
-            </div>
-            ) : (
-                <div className={styles.noTasks}>
-                    <img src={clipBoard} alt="" />
-                    <p className={styles.noTaskRegistered}>Você ainda não possui tarefas cadastradas</p>
-                    <p>Crie tarefas e organize seus itens a seguir</p>
-                </div>
-            )}      
+            <form onSubmit={handleCreateTodo} className={styles.wrapper}>
+                <input type="text" placeholder="Adicione uma nova tarefa" onChange={handleNewTodoChange} value={newTodoText} />
+                <button title="Criar">Criar <PlusCircle size={20} /></button>
+            </form>
+            <TaskList 
+                todos={todos}
+                onDeleteTodos={deleteTodo}
+            />
         </>
-    )
+    ) 
 }
