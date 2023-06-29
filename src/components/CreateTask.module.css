@@ -18,6 +18,7 @@
     border-radius: 8px;
     border: 1px solid var(--gray-700, #0D0D0D);
     background: var(--gray-500, #262626);
+    color: var(--gray-100);
 }
 
 .wrapper button {
@@ -31,4 +32,8 @@
     border-radius: 8px;
     background: var(--blue-dark, #1E6F9F);
     color: var(--gray-100, #F2F2F2);
+}
+
+.wrapper button:hover {
+    background: var(--blue);
 }

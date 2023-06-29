@@ -13,16 +13,16 @@ export function TaskList(){
             <div className={styles.tasks}>
                 <ul>
                     <li>
-                        <input type="checkbox" title="check" />
+                        <input type="checkbox" title="Completar tarefa" />
                         Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
-                        <button className={styles.trash} title="deletar tarefa">
+                        <button className={styles.trash} title="Deletar tarefa">
                             <Trash size={20} />
                         </button>
                     </li>
                     <li>
-                        <input type="checkbox" title="check" />
+                        <input type="checkbox" title="Completar tarefa" />
                         Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
-                        <button className={styles.trash} title="deletar tarefa">
+                        <button className={styles.trash} title="Deletar tarefa">
                             <Trash size={20} />
                         </button>
                     </li>
